@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health Signal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hero">
+    <h1><span class="hero__reg">Mental Health</span> <span class="hero__italic">Signal</span></h1>
+    <p class="hero__sub">A quick read on how habits, screen time, and stress are trending — modeled from your daily rhythm, not a diagnosis.</p>
+  </header>
+
+  <div class="layout">
+
+    <form id="checkin-form" class="form-card" novalidate>
+
+      <div id="error-banner" class="error-banner" hidden role="alert"></div>
+
+      <!-- 01 Profile -->
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Profile</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="field">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="10" max="100" placeholder="e.g. 21" required>
+          <small>10–100</small>
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" list="country-list" placeholder="e.g. India" required>
+          <datalist id="country-list">
+            <option value="Nepal">
+            <option value="India">
+            <option value="USA">
+            <option value="Canada">
+            <option value="Australia">
+            <option value="UK">
+            <option value="Germany">
+            <option value="Mexico">
+            <option value="Turkey">
+            <option value="France">
+          </datalist>
+          <small>Not listed? Type it anyway.</small>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 02 Academic & Digital Habits -->
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>Academic &amp; Digital Habits</h2>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="field">
+          <label for="academic_Level">Academic level</label>
+          <select id="academic_Level" name="academic_Level" required>
+            <option value="" disabled selected>Select</option>
+            <option value="High School">High School</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Graduate">Graduate</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="most_used_platform">Most-used platform</label>
+          <select id="most_used_platform" name="most_used_platform" required>
+            <option value="" disabled selected>Select</option>
+            <option>Facebook</option>
+            <option>Instagram</option>
+            <option>WhatsApp</option>
+            <option>TikTok</option>
+            <option>YouTube</option>
+            <option>Snapchat</option>
+            <option>Twitter</option>
+            <option>LinkedIn</option>
+            <option>WeChat</option>
+            <option>LINE</option>
+            <option>KakaoTalk</option>
+            <option>VKontakte</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="purpose_Of_Use">Primary purpose</label>
+          <select id="purpose_Of_Use" name="purpose_Of_Use" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Networking">Networking</option>
+            <option value="Education">Education</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="News">News</option>
+          </select>
+        </div>
+
+        <div class="field field--suffix">
+          <label for="avg_Daily_usage_hours">Avg. daily screen time</label>
+          <div class="suffix-wrap">
+            <input type="number" id="avg_Daily_usage_hours" name="avg_Daily_usage_hours" min="0" max="24" step="0.1" placeholder="0.0" required>
+            <span>hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-1">
+        <div class="field">
+          <label for="daily_unlocks">Daily phone unlocks</label>
+          <input type="number" id="daily_unlocks" name="daily_unlocks" min="0" step="1" placeholder="e.g. 60" required>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- 03 Lifestyle & Stress -->
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Lifestyle &amp; Stress</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="field field--suffix">
+          <label for="study_hours">Study hours / day</label>
+          <div class="suffix-wrap">
+            <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.1" placeholder="0.0" required>
+            <span>hrs</span>
+          </div>
+        </div>
+
+        <div class="field field--suffix">
+          <label for="physical_activity_hours">Physical activity / day</label>
+          <div class="suffix-wrap">
+            <input type="number" id="physical_activity_hours" name="physical_activity_hours" min="0" max="2" step="0.1" placeholder="0.0" required>
+            <span>hrs</span>
+          </div>
+        </div>
+
+        <div class="field field--suffix">
+          <label for="sleep_hours_per_night">Sleep / night</label>
+          <div class="suffix-wrap">
+            <input type="number" id="sleep_hours_per_night" name="sleep_hours_per_night" min="0" max="24" step="0.1" placeholder="0.0" required>
+            <span>hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field field--full">
+        <label id="stress-label">Perceived stress level</label>
+        <div class="pill-group" role="radiogroup" aria-labelledby="stress-label">
+          <input type="radio" id="stress-low" name="stress_level" value="Low" class="pill-input" required>
+          <label for="stress-low" class="pill">Low</label>
+
+          <input type="radio" id="stress-medium" name="stress_level" value="Medium" class="pill-input">
+          <label for="stress-medium" class="pill">Medium</label>
+
+          <input type="radio" id="stress-high" name="stress_level" value="High" class="pill-input">
+          <label for="stress-high" class="pill">High</label>
+
+          <input type="radio" id="stress-veryhigh" name="stress_level" value="Very High" class="pill-input">
+          <label for="stress-veryhigh" class="pill">Very High</label>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn-submit">
+        <span class="btn-submit__label">Read my signal</span>
+        <span class="btn-submit__spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+
+    <aside class="result-panel">
+      <svg class="result-panel__arcs" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="180" cy="40" r="150" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-dasharray="6 10"/>
+        <circle cx="180" cy="600" r="180" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.5" stroke-dasharray="6 10"/>
+        <circle cx="40" cy="70" r="3" fill="rgba(255,255,255,0.35)"/>
+        <circle cx="320" cy="90" r="3" fill="rgba(255,255,255,0.35)"/>
+        <circle cx="330" cy="560" r="3" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="30" cy="580" r="3" fill="rgba(255,255,255,0.3)"/>
+      </svg>
+
+      <div class="result-panel__inner">
+
+        <div id="state-idle" class="state">
+          <div class="ring ring--empty">
+            <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="76" class="ring__track"></circle></svg>
+          </div>
+          <h2 class="state__title">Your score will appear here</h2>
+          <p class="state__text">Fill in the form and submit to generate a predicted mental health score from 0–10.</p>
+        </div>
+
+        <div id="state-loading" class="state" hidden>
+          <div class="ring ring--spin">
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="76" class="ring__track"></circle>
+              <circle cx="100" cy="100" r="56" class="ring__track ring__track--inner"></circle>
+              <circle cx="100" cy="100" r="76" class="ring__spinner"></circle>
+            </svg>
+          </div>
+          <h2 class="state__title">Reading the signal&hellip;</h2>
+          <p class="state__text">Running your habits through the model.</p>
+        </div>
+
+        <div id="state-result" class="state" hidden>
+          <div class="dial">
+            <svg viewBox="0 0 200 130" class="dial__svg">
+              <defs>
+                <linearGradient id="dialGradient" x1="14" y1="112" x2="186" y2="112" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#E2574C"/>
+                  <stop offset="33%" stop-color="#E2953C"/>
+                  <stop offset="66%" stop-color="#E2C93C"/>
+                  <stop offset="100%" stop-color="#4CAF6D"/>
+                </linearGradient>
+              </defs>
+              <g class="dial__ticks">
+                <line x1="21.5" y1="55.0" x2="15.1" y2="50.3"></line>
+                <line x1="70.0" y1="19.7" x2="67.6" y2="12.1"></line>
+                <line x1="130.0" y1="19.7" x2="132.4" y2="12.1"></line>
+                <line x1="178.5" y1="55.0" x2="184.9" y2="50.3"></line>
+              </g>
+              <path d="M14,112 A86,86 0 0 1 186,112" class="dial__track"></path>
+              <g id="gauge-pointer" class="dial__pointer" style="transform: translate(14px, 112px);">
+                <circle r="8"></circle>
+              </g>
+            </svg>
+          </div>
+          <div class="result__score">
+            <span id="score-value">0.0</span><small>/10</small>
+          </div>
+          <h2 id="result-title" class="state__title"></h2>
+          <p id="result-message" class="state__text"></p>
+          <button type="button" id="reset-btn" class="btn-ghost">Run another read</button>
+        </div>
+
+      </div>
+
+      <div class="result-panel__dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
